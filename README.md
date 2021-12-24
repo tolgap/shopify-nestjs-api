@@ -1,5 +1,7 @@
 # shopify-nestjs-api
 
+[![Node.js CI](https://github.com/tolgap/shopify-nestjs-api/actions/workflows/node.js.yml/badge.svg)](https://github.com/tolgap/shopify-nestjs-api/actions/workflows/node.js.yml)
+
 A wrapper for [@shopify/shopify-node-api](https://github.com/Shopify/shopify-node-api) to setup your Shopify context in a NestJS application.
 
 # Installation
