@@ -16,13 +16,15 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "prepublish": "npm run build"
   },
   "author": "Tolga Paksoy <tlgpksy@gmail.com>",
   "license": "MIT",
   "keywords": [
     "nestjs",
-    "shopify"
+    "shopify",
+    "api"
   ],
   "publishConfig": {
     "access": "public"
