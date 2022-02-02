@@ -1,6 +1,9 @@
 import { Provider } from '@nestjs/common';
-import { SHOPIFY_API_OPTIONS } from './constants';
-import { ShopifyApiAsyncOptions, ShopifyApiOptionsFactory } from './interfaces';
+import { SHOPIFY_API_OPTIONS } from './shopify-api.constants';
+import {
+  ShopifyApiAsyncOptions,
+  ShopifyApiOptionsFactory,
+} from './shopify-api.interfaces';
 
 export function createShopifyApiAsyncOptionsProviders(
   options: ShopifyApiAsyncOptions,

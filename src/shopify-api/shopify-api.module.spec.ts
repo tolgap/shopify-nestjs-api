@@ -7,8 +7,8 @@ import {
   MemorySessionStorage,
   SessionStorage,
 } from '@shopify/shopify-api/dist/auth/session';
-import { ShopifyApiOptions } from './interfaces';
-import { ShopifyApiModule } from './module';
+import { ShopifyApiOptions } from './shopify-api.interfaces';
+import { ShopifyApiModule } from './shopify-api.module';
 
 const requiredOptions: ShopifyApiOptions = {
   apiKey: 'foo',

@@ -1,9 +1,12 @@
 import { DynamicModule, Global, Module, OnModuleInit } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import Shopify from '@shopify/shopify-api';
-import { SHOPIFY_API_OPTIONS } from './constants';
-import { ShopifyApiAsyncOptions, ShopifyApiOptions } from './interfaces';
-import { createShopifyApiAsyncOptionsProviders } from './providers';
+import { SHOPIFY_API_OPTIONS } from './shopify-api.constants';
+import {
+  ShopifyApiAsyncOptions,
+  ShopifyApiOptions,
+} from './shopify-api.interfaces';
+import { createShopifyApiAsyncOptionsProviders } from './shopify-api.providers';
 
 @Global()
 @Module({})
