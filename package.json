@@ -1,6 +1,6 @@
 {
   "name": "shopify-nestjs-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Wrapper around @shopify/shopify-api package for NestJS",
   "main": "dist/index.js",
   "readme": "README.md",
