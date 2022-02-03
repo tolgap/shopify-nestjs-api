@@ -14,5 +14,5 @@
   "ts-node": {
     "files": true
   },
-  "include": ["src", "jest.config.ts"]
+  "include": ["src", "test", "jest.config.ts"]
 }
