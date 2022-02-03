@@ -1,10 +1,10 @@
 import * as request from 'supertest';
+import { createHmac } from 'crypto';
 import { Test } from '@nestjs/testing';
 import { INestApplication, Injectable } from '@nestjs/common';
 import Shopify, { ApiVersion, ShopifyHeader } from '@shopify/shopify-api';
 import { ShopifyWebhookModule } from '../src/shopify-webhook/shopify-webhook.module';
-import { ShopifyWebhookHandler } from 'src';
-import { createHmac } from 'crypto';
+import { ShopifyWebhookHandler } from '../src/shopify-webhook/shopify-webhook.interfaces';
 
 function hmac(secret: string, body: string) {
   return createHmac('sha256', secret).update(body, 'utf8').digest('base64');

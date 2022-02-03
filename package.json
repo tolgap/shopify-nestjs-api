@@ -39,6 +39,7 @@
     "@nestjs/cli": "^8.1.6",
     "@nestjs/common": "^8.2.4",
     "@nestjs/core": "^8.2.4",
+    "@nestjs/platform-express": "^8.2.6",
     "@nestjs/testing": "^8.2.4",
     "@shopify/shopify-api": "^2.0.0",
     "@types/jest": "^27.0.3",
