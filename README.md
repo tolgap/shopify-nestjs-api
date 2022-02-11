@@ -53,7 +53,7 @@ import { ConfigService } from '@nestjs/config';
           apiKey: configService.get('SHOPIFY_API_KEY'),
           apiSecret: configService.get('SHOPIFY_API_SECRET'),
           apiVersion: ApiVersion.Unstable,
-          hostName: configService.get('HOST'),
+          hostName: configService.get('HOST').replace(/https:\/\//, ''),
           isEmbeddedApp: true,
           scopes: ['test_scope'],
         };
@@ -85,7 +85,7 @@ import { MyRedisSessionStorage } from './my-redis-session-storage';
           apiKey: configService.get('SHOPIFY_API_KEY'),
           apiSecret: configService.get('SHOPIFY_API_SECRET'),
           apiVersion: ApiVersion.Unstable,
-          hostName: configService.get('HOST'),
+          hostName: configService.get('HOST').replace(/https:\/\//, ''),
           isEmbeddedApp: true,
           scopes: ['test_scope'],
           sessionStorage,
