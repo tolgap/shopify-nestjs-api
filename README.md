@@ -163,10 +163,10 @@ import { Injectable } from '@nestjs/common';
 export class MyHandler implements ShopifyWebhookHandler {
   async process(topic: string, shop: string, body: string): Promise<void> {
     switch (topic) {
-      case 'products/create':
+      case 'PRODUCTS_CREATE':
         // handle product creation logic
         break;
-      case 'customers/update':
+      case 'CUSTOMERS_UPDATE':
         // handle customer update logic
         break;
     }
