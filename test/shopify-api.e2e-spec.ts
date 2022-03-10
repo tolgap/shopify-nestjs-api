@@ -50,7 +50,7 @@ describe('ShopifyWebhookModule', () => {
       SCOPES: ['products_write'],
     });
 
-    app = moduleRef.createNestApplication(undefined, { bodyParser: false });
+    app = moduleRef.createNestApplication();
     await app.init();
   });
 
@@ -58,11 +58,12 @@ describe('ShopifyWebhookModule', () => {
     await app.close();
   });
 
-  const rawBody = '{"foo": "bar"}';
+  const rawBody = '{"foo":"bar"}';
   test('POST /webhooks', async () => {
     await request(app.getHttpServer())
       .post('/webhooks')
       .set({
+        'Content-Type': 'application/json',
         [ShopifyHeader.Hmac]: hmac('foobar', rawBody),
         [ShopifyHeader.Topic]: 'products/create',
         [ShopifyHeader.Domain]: 'myshop.myshopify.io',
