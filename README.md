@@ -174,6 +174,39 @@ export class MyHandler implements ShopifyWebhookHandler {
 }
 ```
 
+**NOTE: this package uses @shopify/shopify-api under the hood. That package requires full control over the `req` and `res` of your application. It also means that you need to disable the JSON body parsing logic of NestJS. Here's how you achieve this:**
+
+Install the `body-parser` package:
+
+```
+npm install body-parser
+```
+
+```ts
+// main.ts
+import { NestFactory } from '@nestjs/core';
+import { json } from 'body-parser';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const jsonParseMiddleware = json();
+  const app = await NestFactory.create(AppModule, { bodyParser: false });
+  app.use((req, res, next) => {
+    // NOTE: Make sure this is the same `path` you pass to the `ShopifyWebhookModule`.
+    if (req.path.indexOf('/webhooks') === 0) {
+      next();
+    } else {
+      jsonParseMiddleware(req, res, next);
+    }
+  });
+
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+This will enable the body parser logic for all routes, except when `/webhooks` route is called.
+
 You can also import the `ShopifyWebhookModule` with `useFactory`, `useClass` or `useExisting` when importing the module using `.forRootAsync()`. This allows you to inject a webhook handler within the context of dependency injection in your application:
 
 ```ts
