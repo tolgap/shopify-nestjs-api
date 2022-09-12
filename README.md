@@ -1,3 +1,7 @@
+# DEPRECATED ⚠️
+
+This package is deprecated and has been moved to a monorepo structure at [nestjs-shopify/nestjs-shopify](https://github.com/nestjs-shopify/nestjs-shopify).
+
 # shopify-nestjs-api
 
 [![Node.js CI](https://github.com/tolgap/shopify-nestjs-api/actions/workflows/node.js.yml/badge.svg)](https://github.com/tolgap/shopify-nestjs-api/actions/workflows/node.js.yml)
